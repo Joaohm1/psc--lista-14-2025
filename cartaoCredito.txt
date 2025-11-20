@@ -1,0 +1,28 @@
+package Aplicacao;
+
+public class cartaoCredito implements MetodoPagamento{
+	
+	private String numeroCartao;
+	private final double Taxa	 = 0.05; // 5%.
+	
+	public cartaoCredito(String numeroCartao){
+		this.numeroCartao = numeroCartao;
+		
+	}
+	
+	@Override
+	
+	public String realizarPagamento(double valor) {
+	    // Cálculo do valor com a taxa
+	    double valorTotal = valor * (1 + Taxa);
+	    
+	    return String.format(
+	        // Três especificadores: %.2f para o valor, %s para o final do cartão, %.2f para o total
+	        "Pagamento de R$ %.2f realizado com Cartão de Crédito (Final: %s). Cobrança de 5%% de taxa. Valor total: R$ %.2f.",
+	        valor, 
+	        numeroCartao.substring(numeroCartao.length() - 4), 
+	        valorTotal
+	    );
+	
+	}
+	}

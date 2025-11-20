@@ -1,0 +1,17 @@
+package Aplicacao;
+
+public class Boleto implements MetodoPagamento {
+	
+	private String codigoBarra; // Atributo Adicional
+
+    public Boleto(String codigoBarra) {
+        this.codigoBarra = codigoBarra;
+    }
+
+    @Override
+    public String realizarPagamento(double valor) {
+        return String.format(
+            "Pagamento de R$  realizado com Boleto (Código: %s). Boleto gerado e enviado por e-mail.",
+            valor, codigoBarra);
+}
+    }

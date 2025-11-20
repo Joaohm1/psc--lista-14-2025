@@ -1,0 +1,7 @@
+package Aplicacao;
+
+public interface MetodoPagamento {
+
+	String realizarPagamento(double valor);
+	
+}

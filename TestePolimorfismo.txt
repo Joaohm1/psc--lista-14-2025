@@ -1,0 +1,36 @@
+package Aplicacao;
+
+public class TestePolimorfismo {
+
+	public static void main(String[] args) {
+	        System.out.println(" Demonstração de Polimorfismo (Sobrescrita de Método)\n");
+	        
+	        
+	        
+	        // Usamos a interface como tipo de referência (boa prática)
+	        MetodoPagamento cartaoCredito = new cartaoCredito("4002892212345678");
+	        MetodoPagamento boleto = new Boleto("12345678901234567890123456789012345678901234");
+	        MetodoPagamento pix = new Pix("11987654321");
+
+	        // 2. Valores de pagamento
+	        double valorCartao = 150.75;
+	        double valorBoleto = 499.00;
+	        double valorPix = 25.50;
+
+	        // 3. Chame o método estático processar() três vezes.
+	        // O ProcessadorPagamento trata todos os objetos de forma uniforme.
+	        
+	        // Processamento 1: Cartão de Crédito
+	        ProcessadorPagamento.processar(cartaoCredito, valorCartao);
+	        
+	        // Processamento 2: Boleto
+	        ProcessadorPagamento.processar(boleto, valorBoleto);
+	        
+	        // Processamento 3: Pix
+	        ProcessadorPagamento.processar(pix, valorPix);
+	        
+	        System.out.println("\nDemonstração concluída. O mesmo método de serviço invocou diferentes implementações."); 
+
+	}
+
+}

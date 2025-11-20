@@ -1,0 +1,11 @@
+package Aplicacao;
+
+public class ProcessadorPagamento {
+	public static void processar(MetodoPagamento metodo, double valor) {
+        System.out.println("--- Novo Processamento ---");
+        // O compilador sabe que "metodo" tem realizarPagamento(), mas 
+        // a JVM decide qual versão chamar em tempo de execução.
+        String resultado = metodo.realizarPagamento(valor);
+        System.out.println(resultado);
+    }
+}

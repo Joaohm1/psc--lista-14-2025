@@ -1,0 +1,19 @@
+package Aplicacao;
+
+public class Pix implements MetodoPagamento{
+
+	private String chavePix; // Atributo Adicional
+
+    public Pix(String chavePix) {
+        this.chavePix = chavePix;
+    }
+
+    @Override
+    public String realizarPagamento(double valor) {
+        return String.format(
+            "Pagamento de R$ realizado com Pix (Chave: %s). Transação instantânea.",
+            valor, chavePix);
+    }
+	
+	
+}
